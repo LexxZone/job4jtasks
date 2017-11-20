@@ -1,6 +1,6 @@
 package ru.job4j.condition;
 
-public class ArrayExample {
+public class Turn {
         public int[] back (int[] array) {
             
                 for (int i = 0; i < array.length / 2; i++) {
