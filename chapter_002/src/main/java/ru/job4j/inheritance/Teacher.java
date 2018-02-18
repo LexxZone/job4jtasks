@@ -1,11 +1,11 @@
 package ru.job4j.inheritance;
 
-public class Teacher {
+public class Teacher extends Profession {
         
         public String name;
         
         public Teacher () {
-        	this.name = "Ip Man"
+        	this.name = "Ip Man";
         }
         
         public Teacher (String name){

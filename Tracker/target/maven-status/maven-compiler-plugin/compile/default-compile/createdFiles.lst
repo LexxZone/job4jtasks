@@ -1,0 +1,10 @@
+ru/parsentev/models/Comment.class
+ru/parsentev/models/Task.class
+ru/parsentev/start/Tracker.class
+ru/parsentev/start/StartUI.class
+ru/parsentev/start/StubInput.class
+ru/parsentev/start/Input.class
+ru/parsentev/models/Bug.class
+ru/parsentev/start/StartUITest.class
+ru/parsentev/models/Item.class
+ru/parsentev/start/ConsoleInput.class
