@@ -14,7 +14,18 @@ public class Tracker {
 		this.items[position++] = item;
 		return item;
 	}
-
+    
+    
+    public void edit (Item fresh) {
+        for (int index = 0; index!=items.length; index++) {
+            Item item = items[index];
+            if (item != null && item.getId().equals(fresh.getId())) {
+                items[index] = fresh;
+                break;
+            }
+        }
+    }
+    
 	// Поиск заявки по ID
 	protected Item findById(String id) {
 		Item result = null;
@@ -53,14 +64,46 @@ public class Tracker {
 
 	// Удаление заявки
 	public void delete(String id) {
-		Item result = null;
-		for (Item item: items) {
+        
+        
+        System.out.println("//Tacker.delete. Position: " + position);
+        for (int index = 0; index < position; index++) { //поиск удаляемого элемента
+            if (this.items[index].getId().equals(id)) {
+                
+                for (int i = index; i < this.items.length -1; i++) {
+                    
+                    this.items[i] = this.items[i+1];
+                    
+                }
+                
+                
+                
+                
+                
+                //this.items[i] = null;
+                position--;
+
+            /*for (Item item: getAll()) {
+                if (item!=null) {
+                System.out.println(item.getName());
+                }
+            } */
+                break;
+            }
+        }
+        
+      
+        
+        
+        
+		/* for (Item item: items) {
 			if (item != null && item.getId().equals(id)) {
+                System.out.println();
 				item = null;
 
 				break;
 			}
-		}
+		} */
 	}
 
 	// возвращает копию массива this.items без null элементов
@@ -94,8 +137,9 @@ public class Tracker {
 	public Item[] getAll() {
 		Item[] result = new Item[position];
 		for (int index = 0; index!=this.position; index++) {
-			result[index] = this.items[index];
-
+			if (this.items[index]!=null) {
+            result[index] = this.items[index];
+            }
 		}
 		return result;
 	}

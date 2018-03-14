@@ -17,7 +17,7 @@ public class CalculatorTest {
     
     public void whenSubstructOneMinusOneThenZiro() {
         Calculator calc = new Calculator();
-        calc.substact(1D, 1D);
+        calc.substract(1D, 1D);
         double result = calc.getResult();
         double expected = 0D;
         assertThat(result, is(expected));
