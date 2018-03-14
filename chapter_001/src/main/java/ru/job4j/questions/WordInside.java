@@ -5,14 +5,6 @@ package ru.job4j.questions;
  */
 public class WordInside {
 
-    public static void main(String[] args) {
-        WordInside wordInside = new WordInside();
-
-        boolean result = wordInside.contains("Привет", "ри");
-
-        System.out.println(result);
-    }
-
     /**
      * Проверяет. что слово начинается с префикса.
      *
@@ -22,8 +14,6 @@ public class WordInside {
      */
 
     public boolean contains(String origin, String sub) {
-
-        System.out.println(origin + " ___ " + sub);
 
         char[] originArray = origin.toCharArray();
 

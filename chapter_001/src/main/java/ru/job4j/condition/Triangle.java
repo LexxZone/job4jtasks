@@ -43,7 +43,7 @@ public class Triangle {
         double p = this.period(ab, ac, bc);
         if (this.exist(ab, ac, bc)) {
             // написать формулу для расчета площади треугольника.
-            rsl = -1;// Math.sqrt(p * (p - a) * (p - b) * (p - c));
+            rsl = -1; // Math.sqrt(p * (p - a) * (p - b) * (p - c));
         }
         return rsl;
     }
