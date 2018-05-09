@@ -40,21 +40,5 @@ public class PhoneDictionary {
     }
 
 
-    public static void main(String[] args) {
-        PhoneDictionary pd = new PhoneDictionary();
-        pd.add(new Person("Петр", "Арсентьев", "89273795050", "Алтай, 2644"));
-        pd.add(new Person("Дэйви", "Джонс", "89993456789", "Юта, 111 34"));
-        pd.add(new Person("Александр", "Движнов", "467709", "Кастрома"));
-        pd.add(new Person("Сергей", "Зверев", "6004534", "Москва, Спасская, 1"));
-        pd.add(new Person("Алексей", "Иванов", "89067789034", "Псков, Московская, 19"));
-
-        System.out.println(pd.find("Алекс").toString());
-
-
-
-
-    }
-
-
 }
 
