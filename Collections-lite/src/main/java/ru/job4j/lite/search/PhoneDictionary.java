@@ -25,15 +25,13 @@ public class PhoneDictionary {
 
         List<Person> result = new ArrayList<>();
 
-        Iterator<Person> it = persons.iterator();
-
-        while (it.hasNext()) {
-            Person check = it.next();
-            String personInfo = check.getName() + check.getSurname() + check.getAddress() + check.getPhone();
-            if (personInfo.toLowerCase().contains(key.toLowerCase())) {
-                result.add(check);
+        for (Person person : persons) {
+            if (person.getName().contains(key)
+                    || person.getSurname().contains(key)
+                    || person.getAddress().contains(key)
+                    || person.getPhone().contains(key)) {
+                result.add(person);
             }
-
         }
 
         return result;
