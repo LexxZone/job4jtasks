@@ -10,6 +10,8 @@
     <modules>
         <module>chapter_001</module>
         <module>chapter_002</module>
+        <module>Tracker</module>
+        <module>Collections-lite</module>
     </modules>
 	
 	<dependencies>
