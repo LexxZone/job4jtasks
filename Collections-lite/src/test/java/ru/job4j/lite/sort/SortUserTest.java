@@ -11,10 +11,12 @@ import static org.junit.Assert.assertThat;
  */
 public class SortUserTest {
     /**
+     *
      * Creating new users
      * Put them into list without sorting
      * Sort it in result
      * Comparing it with expected (manually sorted array)
+     *
      */
     @Test
     public void whenNotSortedListThenSortedList2() {

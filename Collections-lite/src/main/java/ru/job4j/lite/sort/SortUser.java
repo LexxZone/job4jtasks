@@ -9,6 +9,7 @@ import java.util.TreeSet;
  */
 public class SortUser {
     /**
+     *
      * Method returns TreeSet of users, sorted by the age (min to max). If there are two or more users with the same
      * age they are sorted by the name
      *

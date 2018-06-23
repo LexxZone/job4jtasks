@@ -17,6 +17,7 @@ public class User implements Comparable<User> {
     }
 
     /**
+     *
      *  Overrided method.
      *  @param user
      *  @return negative number, positive number or zero
