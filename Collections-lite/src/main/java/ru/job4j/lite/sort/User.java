@@ -16,6 +16,10 @@ public class User implements Comparable<User> {
         return this.name;
     }
 
+    public int getAge() {
+        return this.age;
+    }
+
     /**
      *
      *  Overrided method.
@@ -27,7 +31,6 @@ public class User implements Comparable<User> {
      */
     @Override
     public int compareTo(User user) {
-        final int res = this.age - user.age;
-        return res == 0 ? this.name.compareTo(user.name) : res;
+        return this.age - user.age;
     }
 }
