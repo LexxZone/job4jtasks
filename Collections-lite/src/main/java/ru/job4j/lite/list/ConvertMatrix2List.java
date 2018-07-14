@@ -7,7 +7,19 @@ package ru.job4j.lite.list;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Converting Matrix to ArrayList
+ */
 public class ConvertMatrix2List {
+
+    /**
+     * This method is converting Matrix to ArrayList
+     *
+     * @param   array
+     *          incoming matrix
+     * @return  list
+     *          final ArrayList
+     */
     public List<Integer> toList(int[][] array) {
 
         List<Integer> list = new ArrayList<>();

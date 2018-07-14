@@ -10,28 +10,36 @@ import java.util.Map;
  */
 public class UserConvert {
 
+    /**
+     * This method is converting List of Users to HashMap
+     *
+     * @param   list
+     *          incoming List of Users
+     * @return  hashMap
+     */
     public HashMap<Integer, User> process(List<User> list) {
-
 
         HashMap<Integer, User> hashMap = new HashMap<>();
 
         for (User singleUser : list) {
-
             hashMap.put(singleUser.getId(), singleUser);
-
         }
 
         for (Map.Entry<Integer, User> pair : hashMap.entrySet())
         {
             Integer key = pair.getKey();
             User value = pair.getValue();
-            System.out.println(key + ":" + value.getName() + " " + value.getCity() );
+            System.out.println(key + ": " + value.getName() + " " + value.getCity() );
         }
 
 
         return hashMap;
     }
 
+    /**
+     * This method is only for visual checking result of Method Process processing
+     *
+     */
     public static void main(String[] args) {
         UserConvert uc = new UserConvert();
 
