@@ -3,7 +3,7 @@ package ru.job4j.lite.sort;
 /**
  * Created by Alexey Dvoryaninov on 08.07.2018 - (lexxzone@gmail.com)
  *
- * Test for Class ListCompare (comparsion of two Strings)
+ * Test for Class ListCompare (comparison of two Strings)
  */
 import org.junit.Test;
 
