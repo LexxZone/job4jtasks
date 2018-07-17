@@ -4,6 +4,8 @@ import java.util.*;
 
 /**
  * Created by Alexey Dvoryaninov on 23.06.2018 - (lexxzone@gmail.com)
+ *
+ * Sorting of Users
  */
 public class SortUser {
     /**
@@ -11,12 +13,12 @@ public class SortUser {
      * Method returns TreeSet of users, sorted by the age (min to max). If there are two or more users with the same
      * age they are sorted by the name
      *
-     * @param userList - List of Users
+     * @param userList - Incoming List of Users
      * @return users  - TreeSet of users
      */
     public Set<User> sort(List<User> userList) {
         TreeSet<User> users = new TreeSet<>();
-        for (User user: userList) {
+        for (User user : userList) {
             users.add(user);
         }
         return users;
@@ -24,10 +26,11 @@ public class SortUser {
 
     /**
      * Sorting by the Name length
-     * @param userList2 incoming list
-     * @return users - sorted list
+     *
+     * @param userList2 incoming list of Users
+     * @return userList2 - sorted list of Users
      */
-    public List<User> sortNameLength (List<User> userList2) {
+    public List<User> sortNameLength(List<User> userList2) {
         Comparator<User> userComparator = new Comparator<User>() {
             public int compare(User one, User two) {
                 return (one.getName().length() - two.getName().length());
@@ -37,12 +40,18 @@ public class SortUser {
         return userList2;
     }
 
-    public List<User> sortByAllFields (List<User> userList3) {
+    /**
+     * Sorting by the all fields
+     *
+     * @param userList3 incoming list of Users
+     * @return userList3 - sorted list of Users
+     */
+    public List<User> sortByAllFields(List<User> userList3) {
 
         Comparator<User> userComparator = new Comparator<User>() {
             public int compare(User one, User two) {
 
-                return (one.getName().compareTo(two.getName())) == 0 ? one.getAge() - two.getAge():one.getName().compareTo(two.getName());
+                return (one.getName().compareTo(two.getName())) == 0 ? one.getAge() - two.getAge() : one.getName().compareTo(two.getName());
 
             }
         };
@@ -52,6 +61,9 @@ public class SortUser {
         return userList3;
     }
 
+    /**
+     * Visual testing of methods
+     */
     public static void main(String[] args) {
 
         List<User> list = new ArrayList<>();
@@ -72,22 +84,22 @@ public class SortUser {
         list.add(alex);
         list.add(jess);
 
-        for (User usr: list
-             ) {
+        for (User usr : list
+                ) {
             System.out.println(usr.getName() + " " + usr.getAge());
 
         }
 
         System.out.println("\n\n\n==========\n\n\n");
 
-        User [] result = new SortUser().sortByAllFields(list).toArray(new User[0]);
+        User[] result = new SortUser().sortByAllFields(list).toArray(new User[0]);
 
         //User [] result = new SortUser().sortNameLength(list).toArray(new User[0]);
         //User [] result = new SortUser().sort(list).toArray(new User[0]);
 
 
-        for (User usr: result
-             ) {
+        for (User usr : result
+                ) {
             System.out.println(usr.getName() + " " + usr.getAge());
 
         }

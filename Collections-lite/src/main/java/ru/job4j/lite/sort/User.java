@@ -7,15 +7,31 @@ public class User implements Comparable<User> {
     public String name;
     public int age;
 
+    /**
+     * This is constructor for User class
+     *
+     * @param name - name of person
+     * @param age - age of person
+     */
     public User(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
+    /**
+     * Get User name
+     *
+     * @return name - name of User
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     * Get User age
+     *
+     * @return age - age of User
+     */
     public int getAge() {
         return this.age;
     }

@@ -1,4 +1,4 @@
-package ru.parsentev.polymorphism;
+package ru.job4j.polymorphism;
 
 import org.junit.After;
 import org.junit.Before;

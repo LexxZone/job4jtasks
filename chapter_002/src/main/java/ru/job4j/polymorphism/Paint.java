@@ -1,4 +1,4 @@
-package ru.parsentev.polymorphism;
+package ru.job4j.polymorphism;
 
 public class Paint {
     

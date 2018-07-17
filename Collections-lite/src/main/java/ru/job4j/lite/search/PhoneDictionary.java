@@ -14,17 +14,14 @@ public class PhoneDictionary {
     public void add(Person person) {
         this.persons.add(person);
     }
-
     /**
      * Вернуть список всех пользователей, который содержат key в любых полях.
      *
      * @param key Ключ поиска.
-     * @return Список подощедщих пользователей.
+     * @return Список подошедших пользователей.
      */
     public List<Person> find(String key) {
-
         List<Person> result = new ArrayList<>();
-
         for (Person person : persons) {
             if (person.getName().contains(key)
                     || person.getSurname().contains(key)
@@ -33,10 +30,7 @@ public class PhoneDictionary {
                 result.add(person);
             }
         }
-
         return result;
     }
-
-
 }
 
