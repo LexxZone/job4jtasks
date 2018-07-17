@@ -27,19 +27,6 @@ public class ConvertMatrix2List {
                 list2.add(singleInt);
             }
         }
-        for (int single : list2) {
-            System.out.printf("%s ", single);
-        }
         return list2;
-    }
-
-    public static void main(String[] args) {
-        ConvertMatrix2List m2l = new ConvertMatrix2List();
-        List<int[]> list3 = new ArrayList<>();
-        list3.add(new int[]{1, 2});
-        list3.add(new int[]{4, 3, 9, 4, 5, 6, 8});
-        list3.add(new int[]{1, 14, 4});
-
-        List<Integer> result = m2l.convert(list3);
     }
 }
