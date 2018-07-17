@@ -13,26 +13,33 @@ import java.util.List;
 public class ConvertMatrix2List {
 
     /**
-     * This method is converting Matrix to ArrayList
+     * This method is converting list of arrays to single Integer list
      *
-     * @param   array
-     *          incoming matrix
-     * @return  list
-     *          final ArrayList
+     * @param   list
+     *          incoming list of arrays
+     * @return  list2
+     *          final Integer List
      */
-    public List<Integer> toList(int[][] array) {
-
-        List<Integer> list = new ArrayList<>();
-
-        for (int first = 0; first < array.length; first++) {
-
-            for (int second = 0; second < 2; second++) {
-
-                list.add(array[first][second]);
-
+    public List<Integer> convert(List<int[]> list) {
+        List<Integer> list2 = new ArrayList<>();
+        for (int[] singleArray : list) {
+            for (int singleInt : singleArray) {
+                list2.add(singleInt);
             }
         }
+        for (int single : list2) {
+            System.out.printf("%s ", single);
+        }
+        return list2;
+    }
 
-        return list;
+    public static void main(String[] args) {
+        ConvertMatrix2List m2l = new ConvertMatrix2List();
+        List<int[]> list3 = new ArrayList<>();
+        list3.add(new int[]{1, 2});
+        list3.add(new int[]{4, 3, 9, 4, 5, 6, 8});
+        list3.add(new int[]{1, 14, 4});
+
+        List<Integer> result = m2l.convert(list3);
     }
 }
