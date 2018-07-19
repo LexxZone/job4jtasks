@@ -1,10 +1,21 @@
 package ru.job4j.condition;
 
-public class Point {
+/**
+ * Created by Alexey Dvoryaninov - (lexxzone@gmail.com)
+ */
 
+public class Point {
+    // Координаты точки
     private int x;
     private int y;
 
+    /**
+     *
+     * @param   x
+     *          Точка x
+     * @param   y
+     *          Точка y
+     */
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
@@ -23,18 +34,15 @@ public class Point {
         return this.y;
     }
 
+    /**
+     *
+     * @param   that
+     *          Точка, до которой метод измеряет расстояние
+     *
+     * @return  Расстояние между точками
+     */
     public double distanceTo(Point that) {
-        return -1;
+        return Math.sqrt(
+                Math.pow(this.x - that.x, 2) + Math.pow(this.y - that.y, 2));
     }
-
-
-
-
-
-
-    //2. Задано уравнение функции y(x) = a * x + b;
-
-    //3. Добавьте метод в класс Point определяющий находится ли точка на этой фукнции.
-
-
 }
