@@ -1,15 +1,15 @@
 ru/parsentev/models/Comment.class
 ru/parsentev/start/Tracker.class
-ru/parsentev/start/StartUI.class
 ru/parsentev/start/StubInput.class
+ru/parsentev/start/StartUI.class
 ru/parsentev/start/Input.class
 ru/parsentev/start/MenuTracker$FindItemByName.class
 ru/parsentev/models/Bug.class
 ru/parsentev/start/EditItem.class
 ru/parsentev/models/Item.class
 ru/parsentev/start/ConsoleInput.class
-ru/parsentev/start/MenuTracker$AddItem.class
 ru/parsentev/start/MenuTracker$FindItemById.class
+ru/parsentev/start/MenuTracker$AddItem.class
 ru/parsentev/models/Task.class
 ru/parsentev/start/StartUITest.class
 ru/parsentev/start/MenuTracker$ShowItems.class
