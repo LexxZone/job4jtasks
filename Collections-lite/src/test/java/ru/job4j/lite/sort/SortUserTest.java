@@ -36,9 +36,8 @@ public class SortUserTest {
         list.add(alex);
         list.add(jess);
         User[] result = new SortUser().sort(list).toArray(new User[0]);
-        User[] expected = new User[]{bella, chris, jess, sven, alex, john};
+        User[] expected = new User[]{bella, chris, sven, alex, john};
         assertThat(result, is(expected));
-
     }
 
     /**
