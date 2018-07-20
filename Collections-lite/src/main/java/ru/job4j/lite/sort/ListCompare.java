@@ -19,7 +19,7 @@ public class ListCompare implements Comparator<String> {
      *          first String to be compared
      * @param   right
      *          second String to be compared
-     * @return  result
+     * @return  result -
      *          negative integer if left less than right, zero if left
      *          equals right or a positive integer if right is greater than left
      */
