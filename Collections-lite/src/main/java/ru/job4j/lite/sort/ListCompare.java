@@ -19,38 +19,37 @@ public class ListCompare implements Comparator<String> {
      *          first String to be compared
      * @param   right
      *          second String to be compared
-     * @return  a negative integer if left less than right, zero if left
+     * @return  result
+     *          negative integer if left less than right, zero if left
      *          equals right or a positive integer if right is greater than left
      */
     @Override
     public int compare(String left, String right) {
-
-        int leftLength = left.length();
-        int rightLength = right.length();
-        int minLength = Math.min(leftLength, rightLength);
-
-        List<Character> leftOne = new ArrayList<>();
-
-        for (int i = 0; i < left.length(); i++) {
-            leftOne.add(i, left.charAt(i));
-        }
-
-        List<Character> rightOne = new ArrayList<>();
-
-        for (int i = 0; i < right.length(); i++) {
-            rightOne.add(i, right.charAt(i));
-        }
-
-        int a = -10000;
-        int b = 0;
-        while (b < minLength) {
-            char char1 = leftOne.get(b);
-            char char2 = rightOne.get(b);
-            if (char1 != char2) {
-                a = char1 - char2;
+        int result = 0;
+        // get minimal length of two strings
+        int minLength = Math.min(left.length(), right.length());
+        // create char arrays from strings
+        char[] leftCh = left.toCharArray();
+        char[] rightCh = right.toCharArray();
+        // comparing of two char arrays symbol by symbol
+        for (int i = 0; i < minLength; i++) {
+            if (leftCh[i] != rightCh[i]) {
+                if (leftCh[i] < rightCh[i]) {
+                    result = -1;
+                } else {
+                    result = 1;
+                }
             }
-            b++;
         }
-        return a == -10000 ? leftLength - rightLength : a;
+        // if result after comparison of two char arrays is 0
+        // than comparing lengths of words
+        if (result == 0) {
+            if (left.length() < right.length()) {
+                result = -1;
+            } else if (left.length() > right.length()) {
+                result = 1;
+            }
+        }
+        return result;
     }
 }
