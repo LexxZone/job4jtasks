@@ -22,23 +22,25 @@ public class ListCompare implements Comparator<String> {
      * @return  result -
      *          negative integer if left less than right, zero if left
      *          equals right or a positive integer if right is greater than left
+     *
+     * Description:
+     *          1. get minimal length of two strings
+     *          2. create char arrays from strings
+     *          3. comparing of two char arrays symbol by symbol
+     *          4. if result after comparison of two char arrays is 0
+     *             than comparing lengths of words
      */
     @Override
     public int compare(String left, String right) {
         int result = 0;
-        // get minimal length of two strings
         int minLength = Math.min(left.length(), right.length());
-        // create char arrays from strings
         char[] leftCh = left.toCharArray();
         char[] rightCh = right.toCharArray();
-        // comparing of two char arrays symbol by symbol
         for (int i = 0; i < minLength; i++) {
             if (leftCh[i] != rightCh[i]) {
                 result = Character.compare(leftCh[i], rightCh[i]);
             }
         }
-        // if result after comparison of two char arrays is 0
-        // than comparing lengths of words
         if (result == 0) {
             result = left.length() -  right.length();
         }
