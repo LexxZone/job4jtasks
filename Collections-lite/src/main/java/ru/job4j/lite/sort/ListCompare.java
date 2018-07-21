@@ -34,21 +34,13 @@ public class ListCompare implements Comparator<String> {
         // comparing of two char arrays symbol by symbol
         for (int i = 0; i < minLength; i++) {
             if (leftCh[i] != rightCh[i]) {
-                if (leftCh[i] < rightCh[i]) {
-                    result = -1;
-                } else {
-                    result = 1;
-                }
+                result = Character.compare(leftCh[i], rightCh[i]);
             }
         }
         // if result after comparison of two char arrays is 0
         // than comparing lengths of words
         if (result == 0) {
-            if (left.length() < right.length()) {
-                result = -1;
-            } else if (left.length() > right.length()) {
-                result = 1;
-            }
+            result = left.length() -  right.length();
         }
         return result;
     }
