@@ -1,20 +1,20 @@
+
 <project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.job4j</groupId>
-    <artifactId>junior</artifactId>
+    <artifactId>Java_A_to_Z</artifactId>
     <packaging>pom</packaging>
     <version>2.0</version>
-    <name>junior</name>
+    <name>Java_A_to_Z</name>
     <url>http://job4j.ru/</url>
 
     <modules>
-        <module>chapter_001</module>
-        <module>chapter_002</module>
-        <module>Tracker</module>
-        <module>Collections-lite</module>
+        <module>Intern</module>
+        <module>Junior</module>
+
     </modules>
-	
-	<dependencies>
+
+    <dependencies>
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
@@ -28,8 +28,8 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-	
-	    <build>
+
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -40,7 +40,7 @@
                         <id>validate</id>
                         <phase>validate</phase>
                         <configuration>
-                            <configLocation>checkstyle.xml</configLocation>
+                            <configLocation>../checkstyle.xml</configLocation>
                             <encoding>UTF-8</encoding>
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>
@@ -74,3 +74,4 @@
         </plugins>
     </build>
 </project>
+
