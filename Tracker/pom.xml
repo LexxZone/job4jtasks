@@ -1,0 +1,44 @@
+<project>
+	<properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+    </properties>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ru.parsentev</groupId>
+    <artifactId>tracker</artifactId>
+    <version>1.0</version>
+    <name>Tracker</name>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>ru.job4j</groupId>
+        <artifactId>Java_A_to_Z</artifactId>
+        <version>2.0</version>
+    </parent>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>tracker</finalName>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>ru.parsentev.start.StartUI</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

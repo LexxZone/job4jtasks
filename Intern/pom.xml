@@ -1,19 +1,26 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.job4j</groupId>
-    <artifactId>Java_A_to_Z</artifactId>
+    <artifactId>Intern</artifactId>
     <packaging>pom</packaging>
     <version>2.0</version>
-    <name>Java_A_to_Z</name>
+    <name>Intern</name>
     <url>http://job4j.ru/</url>
 
     <modules>
-        <module>Intern</module>
-        <module>Junior</module>
-        <module>Tracker</module>
+        <module>Intern_chapter_1</module>
+        <module>Intern_chapter_2</module>
+        <!--<module>Tracker</module>-->
+        <module>Intern_chapter_3</module>
     </modules>
 
-    <dependencies>
+    <parent>
+        <groupId>ru.job4j</groupId>
+        <artifactId>Java_A_to_Z</artifactId>
+        <version>2.0</version>
+    </parent>
+	
+	<dependencies>
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
@@ -27,8 +34,8 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <build>
+	
+	    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
