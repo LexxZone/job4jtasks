@@ -1,14 +1,15 @@
 package iterator;
 
 /**
- * 30.08.2018
+ * 06.09.2018
  *
  * @author Alexey Dvoryaninov  ( lexxzone@gmail.com )
  */
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-public class CheckArrayEvenIt implements Iterator {
+public class EvenNumbersIterator implements Iterator {
 
     /**
      * Входящий массив.
@@ -16,15 +17,16 @@ public class CheckArrayEvenIt implements Iterator {
     private int[] array;
 
     /**
-     * Индекс в массиве.
+     * Индекс в массиве (каретка).
      */
     private int index = 0;
 
     /**
      * Конструктор.
+     *
      * @param array - входящий массив.
      */
-    public CheckArrayEvenIt(int[] array) {
+    public EvenNumbersIterator(int[] array) {
         this.array = array;
     }
 
@@ -46,6 +48,9 @@ public class CheckArrayEvenIt implements Iterator {
 
     @Override
     public Integer next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
         int number = array[index++];
         while (number % 2 != 0 && array.length > index) {
             number = array[index++];
@@ -55,7 +60,8 @@ public class CheckArrayEvenIt implements Iterator {
 
     @Override
     public void remove() {
-
+        throw new UnsupportedOperationException();
     }
+
 
 }
