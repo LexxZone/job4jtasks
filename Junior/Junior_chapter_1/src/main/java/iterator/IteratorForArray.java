@@ -10,14 +10,8 @@ import java.util.NoSuchElementException;
  */
 public class IteratorForArray implements Iterator<Integer> {
 
-    /**
-     * @param externalArray - Исходный многомерный массив.
-     */
-    private int[][] externalArray;
-    /**
-     * @param innerArray - Внутренний одномерный массив.
-     */
-    private int[] innerArray;
+    private int[][] arr;
+
     /**
      * @param innerIndex - индекс для внутреннего массива.
      */
@@ -33,44 +27,41 @@ public class IteratorForArray implements Iterator<Integer> {
      * @param values - исходный двумерный массив.
      */
     IteratorForArray(int[][] values) {
-        try {
-            this.externalArray = values;
-            this.innerArray = externalArray[externalIndex++];
-        } catch (NoSuchElementException | ArrayIndexOutOfBoundsException exception) {
-            exception.printStackTrace();
-        }
+        this.arr = values;
     }
 
     @Override
     public boolean hasNext() {
-        try {
-            if (innerArray.length <= innerIndex) {
-                if (externalArray.length > externalIndex) {
-                    innerArray = externalArray[externalIndex++];
-                    innerIndex = 0;
-                }
+        boolean result = false;
+        if (arr.length > externalIndex) {
+            if (arr[externalIndex].length > innerIndex) {
+                result = true;
+            } else {
+                result = false;
             }
-        } catch (NullPointerException e) {
-            return false;
         }
-        return innerArray.length > innerIndex;
+        System.out.println(result);
+        return result;
     }
 
     @Override
     public Integer next() {
+        int resultNext;
         if (!hasNext()) {
-            if (externalArray.length > externalIndex) {
-                innerArray = externalArray[externalIndex++];
+            throw new NoSuchElementException();
+        } else {
+            resultNext = arr[externalIndex][innerIndex];
+            innerIndex++;
+            if (innerIndex == arr[externalIndex].length) {
+                externalIndex++;
                 innerIndex = 0;
             }
-            throw new NoSuchElementException();
         }
-        return innerArray[innerIndex++];
+        return resultNext;
     }
 
     @Override
     public void remove() {
         throw new UnsupportedOperationException();
     }
-
 }
