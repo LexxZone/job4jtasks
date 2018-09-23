@@ -15,12 +15,10 @@ public class EvenNumbersIterator implements Iterator {
      * Входящий массив.
      */
     private int[] array;
-
     /**
      * Индекс в массиве (каретка).
      */
     private int index = 0;
-
     /**
      * Конструктор.
      *
@@ -30,14 +28,23 @@ public class EvenNumbersIterator implements Iterator {
         this.array = array;
     }
 
+    public boolean check(int number) {
+        return number % 2 == 0;
+    }
+
     @Override
     public boolean hasNext() {
         boolean isEvenNumber = false;
         if (array.length > index) {
-            int chekIndex = index;
-            while (chekIndex < array.length) {
-                int number = array[chekIndex++];
+            int checkIndex = index;
+            while (checkIndex < array.length) {
+                int number = array[checkIndex++];
+                //System.out.println(checkIndex + " number");
+
+                //System.out.println(check(checkIndex) + " check");
+
                 if (number % 2 == 0) {
+                //if(check(checkIndex)) {
                     isEvenNumber = true;
                     break;
                 }
@@ -53,6 +60,7 @@ public class EvenNumbersIterator implements Iterator {
         }
         int number = array[index++];
         while (number % 2 != 0 && array.length > index) {
+        //while (!check(array[index++]) && array.length > index) {
             number = array[index++];
         }
         return number;

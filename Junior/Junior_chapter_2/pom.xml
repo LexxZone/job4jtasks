@@ -5,9 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.job4j</groupId>
-    <artifactId>Junior_chapter_1</artifactId>
+    <artifactId>Junior_chapter_2</artifactId>
     <version>2.0</version>
-    <name>Junior_chapter_1 Collection Pro</name>
+
+    <name>Junior_chapter_2 Multithreading</name>
 
     <parent>
         <groupId>ru.job4j</groupId>
@@ -15,5 +16,4 @@
         <version>2.0</version>
     </parent>
 
-    
 </project>
