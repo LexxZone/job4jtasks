@@ -29,30 +29,26 @@ public class RectangleMove implements Runnable {
 
     /**
      * Метод запускает движение (изменение значений координаты квадрата).
-     * Первый цикл While обеспечивает возобновление движения квадрата после прохождения цикла туда-обратно
-     * Вложенные циклы отвечают за соответственно движение вправо/влево
-     * Учитываются размеры квадрата
+     * Цикл While отслеживает флаг Interrupted у текущего потока.
+     * Вложенный оператор ветвления проверяет на границы области перемещения квадрата.
+     * Как только она достигнута шаг меняется на противоположный через *= -1
+     * В программе учитываются размеры квадрата.
+     *
      */
     @Override
     public void run() {
-        boolean action = true;
-        while (action) {
-            while (this.rect.getX() < this.xlim - this.rect.getWidth()) {
-                this.rect.setX(this.rect.getX() + 1);
-                try {
-                    Thread.sleep(30);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        int step = 1;
+        Thread current = Thread.currentThread();
+        while (!current.isInterrupted()) {
+            if(this.rect.getX() == 0 || this.rect.getX() == this.xlim - this.rect.getWidth()) {
+                step *= -1;
             }
+            this.rect.setX(this.rect.getX() + step);
 
-            while (this.rect.getX() >= 1) {
-                this.rect.setX(this.rect.getX() - 1);
-                try {
-                    Thread.sleep(30);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            try {
+                Thread.sleep(30);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
