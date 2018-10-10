@@ -10,6 +10,7 @@
     <modules>
         <module>Intern</module>
         <module>Junior</module>
+	<module>Middle</module>
         <module>Tracker</module>
     </modules>
 

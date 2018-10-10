@@ -7,7 +7,7 @@
     <groupId>ru.parsentev</groupId>
     <artifactId>Intern_chapter_2</artifactId>
     <version>1.0</version>
-    <name>Intern_chapter_1 OOP</name>
+    <name>Intern_chapter_2 OOP</name>
     <packaging>jar</packaging>
 
     <parent>
