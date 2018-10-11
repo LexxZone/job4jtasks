@@ -10,8 +10,8 @@
     <modules>
         <module>Intern_chapter_1</module>
         <module>Intern_chapter_2</module>
-        <!--<module>Tracker</module>-->
         <module>Intern_chapter_3</module>
+        <module>Intern_test_tasks</module>
     </modules>
 
     <parent>
