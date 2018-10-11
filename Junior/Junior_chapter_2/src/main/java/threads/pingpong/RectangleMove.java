@@ -1,13 +1,15 @@
 package threads.pingpong;
 
+import javafx.scene.shape.Rectangle;
 /**
  * 23.09.2018
  *
  * @author Alexey Dvoryaninov  ( lexxzone@gmail.com )
+ *
+ * Класс описывает логику движения квадрата по горизонтальной оси,
+ *      а также смену направления движения при достижении границ
+ *      заданной области.
  */
-
-import javafx.scene.shape.Rectangle;
-
 public class RectangleMove implements Runnable {
 
     private final Rectangle rect;

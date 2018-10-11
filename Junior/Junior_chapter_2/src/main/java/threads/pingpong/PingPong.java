@@ -1,21 +1,18 @@
 package threads.pingpong;
 
-/**
- * 23.09.2018
- *
- * @author Alexey Dvoryaninov  ( lexxzone@gmail.com )
- */
-
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+/**
+ * 23.09.2018
+ *
+ * @author Alexey Dvoryaninov  ( lexxzone@gmail.com )
+ */
 public class PingPong extends Application {
     private static final String JOB4J = "Пинг-понг www.job4j.ru";
-
-    private Thread pingPongThread;
 
     @Override
     public void start(Stage stage) {
@@ -24,7 +21,7 @@ public class PingPong extends Application {
         Group group = new Group();
         Rectangle rect = new Rectangle(50, 100, 10, 10);
         group.getChildren().add(rect);
-        pingPongThread = new Thread((new RectangleMove(rect, limitX, limitY)));
+        Thread pingPongThread = new Thread((new RectangleMove(rect, limitX, limitY)));
         pingPongThread.start();
         stage.setScene(new Scene(group, limitX, limitY));
         stage.setTitle(JOB4J);
