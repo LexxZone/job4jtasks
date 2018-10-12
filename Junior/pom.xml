@@ -10,6 +10,8 @@
     <modules>
         <module>Junior_chapter_1</module>
         <module>Junior_chapter_2</module>
+	    <module>Junior_chapter_3</module>
+	    <module>Junior_chapter_4</module>
     </modules>
 
     <parent>
