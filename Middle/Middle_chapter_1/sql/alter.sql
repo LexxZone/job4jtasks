@@ -1,0 +1,3 @@
+DELETE FROM comments;
+DELETE FROM items;
+ALTER TABLE items ADD COLUMN author_id INT NOT NULL REFERENCES users(id);
