@@ -26,7 +26,7 @@ INSERT INTO product (name, type_id, expired_date, price, value) VALUES ('Сиб�
 --Запросы по заданию:
 
 ----Получение всех продуктов с типом "СЫР"
-SELECT * FROM product WHERE type_id = '1';
+SELECT * FROM product as p inner join type as t on p.type_id = t.id WHERE t.name = 'СЫР';
 
 ----Получение всех продуктов, в имени которых есть слово "мороженое"
 SELECT * FROM product as p WHERE p.name LIKE '%мороженое%';
@@ -37,14 +37,14 @@ SELECT * FROM product as p WHERE p.expired_date > '2018-11-01';
 ----Получить самый дорогой продукт
 SELECT MAX(price) FROM product;
 
-----Выводит количество всех продуктов определенного типа(в данном случае 2).
-SELECT count(*) FROM product where type_id = '2';
+----Выводит количество всех продуктов определенного типа(в данном случае "СЫР").
+SELECT count(*) FROM product as p inner join type as t on p.type_id = t.id where t.name = 'СЫР';
 
 ----Запрос получение всех продуктов с типом "СЫР" и "МОЛОКО"
-SELECT * FROM product WHERE type_id = '1' OR type_id='2';
+SELECT * FROM product as p inner join type as t on p.type_id = t.id WHERE t.name = 'СЫР' OR t.name = 'МОЛОКО';
 
 ----Запрос, который выводит тип продуктов, которых осталось меньше 10 штук.
 SELECT type_id FROM product WHERE value < '10';
 
 ----Вывести все продукты и их тип
-SELECT name, type_id FROM product;
+SELECT p.name, t.name FROM product as p inner join type as t on p.type_id = t.id;

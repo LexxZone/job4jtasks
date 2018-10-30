@@ -2,11 +2,13 @@ package ru.job4j.puzzle;
 
 import ru.job4j.puzzle.figures.Cell;
 import ru.job4j.puzzle.figures.Figure;
+
+import java.util.Arrays;
+
 /**
  * 11.10.2018
  *
  * @author Alexey Dvoryaninov  ( lexxzone@gmail.com )
- *
  */
 //TODO add comments.
 
@@ -37,7 +39,7 @@ public class Logic {
         return rst;
     }
 
-    public boolean isFree(Cell ... cells) {
+    public boolean isFree(Cell... cells) {
         boolean result = cells.length > 0;
         for (Cell cell : cells) {
             if (this.findBy(cell) != -1) {
@@ -69,6 +71,31 @@ public class Logic {
     public boolean isWin() {
         int[][] table = this.convert();
         boolean result = false;
+
+
+        /*for (int i = 0; i < this.size; i++) {
+            boolean rowValues = true;
+            boolean rowValues2 = true;
+            for (int j = 0; j < this.size; j++) {
+                if (table[i][j] != 1) {
+                    rowValues = false;
+                }
+                if (j == (this.size - 1) && rowValues == true) {
+                    result = true;
+                    break;
+                }
+
+                if (table[j][i] != 1) {
+                    rowValues2 = false;
+                }
+                if (j == (this.size - 1) && rowValues2 == true) {
+                    result = true;
+                    break;
+                }
+            }
+
+        }*/
+
         return result;
     }
 
@@ -82,6 +109,9 @@ public class Logic {
                 }
             }
         }
+        //System.out.println(Arrays.deepToString(table).replace("], ", "]\n"));
+        System.out.println(Arrays.deepToString(table));
+        //System.out.println(table);
         return table;
     }
 }
